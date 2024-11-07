@@ -7,7 +7,16 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens:{
+      'mobile': '426px',
+      'sm' : '640px',
+      'md' : '768px',
+      'lg' : '1024px',
+    },
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
