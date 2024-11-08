@@ -6,7 +6,7 @@ import { CartContext } from "./CartContext";
 
 export default function Header() {
 
-    const { cartProducts, setCartProducts } = useContext(CartContext) || {};
+    const { cartProducts } = useContext(CartContext) || {};
 
     return (
         <header className="bg-black text-white flex flex-col items-center lg:justify-between py-4 px-1 min-w-fit lg:flex-row mobile:px-4 lg:py-16 lg:px-32 text-nowrap">

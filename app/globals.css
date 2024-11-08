@@ -21,3 +21,21 @@ body {
   background: var(--background);
   @apply font-sans;
 }
+
+table.basic {
+  @apply w-full;
+}
+table.basic thead tr td{
+  @apply text-black bg-white text-lg
+}
+
+table.basic thead tr:first-child td:first-child {
+  @apply rounded-tl-lg; /* Esquina superior izquierda */
+}
+
+table.basic thead tr:first-child td:last-child {
+  @apply rounded-tr-lg; /* Esquina superior derecha */
+}
+table.basic tr td{
+  @apply border-b-2 p-1
+}

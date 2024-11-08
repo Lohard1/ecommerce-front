@@ -1,12 +1,9 @@
 import IconCart from "@/assets/IconCart";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { ProductType } from "@/types/product";
 import { CartContext } from "./CartContext";
 
 export default function ProductCard(product: ProductType | null) {
-    const [products, setProducts] = useState<ProductType[] | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [visible, setVisible] = useState(false);
     const { cartProducts, setCartProducts } = useContext(CartContext) || {};
 
     function addProductToCart() {

@@ -3,7 +3,7 @@ export interface ProductType {
     __v?: number; 
     title?: string;
     description?: string;
-    price?: number; 
+    price: number; 
     images?: Array<string>;
     category?: string;
     properties?: Array<{name: string, values: string } > ;

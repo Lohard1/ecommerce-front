@@ -1,4 +1,3 @@
-import IconCart from "@/assets/IconCart";
 import { useEffect, useState } from "react";
 import { ProductType } from "@/types/product";
 import ProductCard from "./productCard";
@@ -6,11 +5,9 @@ import ProductCard from "./productCard";
 export default function LatestProducts() {
     const [products, setProducts] = useState<ProductType[] | null>(null);
     const [loading, setLoading] = useState(true);
-    const [visible, setVisible] = useState(false);
 
     useEffect(() => {
         async function fetchProduct() {
-            setVisible(false)
             try {
                 const response = await fetch('/api/products');
                 const data = await response.json()
@@ -20,9 +17,6 @@ export default function LatestProducts() {
                 console.log('Error fetching featured products', error)
             } finally {
                 setLoading(false);
-                setTimeout(() => {
-                    setVisible(true);
-                }, 50);
             }
         }
         fetchProduct();

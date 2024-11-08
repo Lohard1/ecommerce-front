@@ -1,7 +1,6 @@
 'use client'
 
 import { createContext, ReactNode, useState, Dispatch, SetStateAction, useEffect } from "react";
-import { ProductType } from "@/types/product";
 import { ProductCart } from "@/types/product";
 
 interface CartContextType {

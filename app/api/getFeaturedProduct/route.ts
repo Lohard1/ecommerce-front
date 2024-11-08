@@ -1,8 +1,8 @@
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/products";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 
     try {
         await mongooseConnect();

@@ -1,13 +1,12 @@
 import { mongooseConnect } from "@/lib/mongoose";
 import { Product } from "@/models/products";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
 
     try {
         await mongooseConnect();
         const products = await Product.find({}, null,{sort: {'_id':-1}, limit: 8});
-        console.log(products)
         return NextResponse.json(products, {status:200});
     }
     catch (error) {
