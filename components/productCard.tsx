@@ -29,7 +29,7 @@ export default function ProductCard(product: ProductType | null) {
     }, [])
 
     return (
-        <div className="flex flex-col shrink-1 p-2 ">
+        <div className="flex flex-col shrink-1 p-2 text-black">
             <div className="flex w-full place-content-center bg-white rounded-2xl mb-4 cursor-pointer">
             {product?.images && (
                 <img className="p-2 w-56 h-56" src={product?.images[0]} />
