@@ -1,6 +1,6 @@
 import { mongooseConnect } from "@/lib/mongoose";
 import { NextResponse, NextRequest } from "next/server";
-import { Order } from "@/models/order";
+//import { Order } from "@/models/order";
 import paypal from '@paypal/checkout-server-sdk'
 import { ProductCart } from "@/types/product";
 
@@ -32,9 +32,7 @@ export async function POST(req: NextRequest) {
 
         console.log('items:', items)
 
-        const totalAmount = cartProducts
-        .reduce((total:any, product:any) => total + product.price * product.quantity, 0)
-        .toFixed(2);
+        const totalAmount = cartProducts.reduce((total:number, product:ProductCart) => total + product.price * product.quantity, 0).toFixed(2);
 
         const request = new paypal.orders.OrdersCreateRequest();
         request.requestBody({
@@ -42,7 +40,7 @@ export async function POST(req: NextRequest) {
             purchase_units: [{
                 amount: {
                     currency_code: "USD",
-                    value: cartProducts.reduce((total: any, product: any) => total + product.price * product.quantity, 0).toFixed(2),
+                    value: cartProducts.reduce((total: number, product: ProductCart) => total + product.price * product.quantity, 0).toFixed(2),
                     breakdown: {
                         item_total:{
                             currency_code: "USD",
